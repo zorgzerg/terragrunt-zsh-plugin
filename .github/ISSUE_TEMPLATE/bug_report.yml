@@ -1,0 +1,59 @@
+name: Bug report
+description: Report broken completion, aliases, or cache behavior
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report a problem.
+  - type: input
+    id: terragrunt-version
+    attributes:
+      label: Terragrunt version
+      placeholder: v1.1.3
+    validations:
+      required: true
+  - type: input
+    id: terraform-version
+    attributes:
+      label: Terraform version
+      placeholder: v1.9.8
+    validations:
+      required: true
+  - type: input
+    id: zsh-version
+    attributes:
+      label: Zsh version
+      placeholder: zsh 5.9
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the command, expected completion, and actual result.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Start a fresh Zsh session.
+        2. Change to a Terragrunt unit.
+        3. Type `tgp -target=` and press Tab.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Relevant diagnostics
+      description: Remove credentials, state contents, and sensitive output values.
+      render: shell
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Sensitive data
+      options:
+        - label: I removed credentials, Terraform state, and sensitive output values.
+          required: true

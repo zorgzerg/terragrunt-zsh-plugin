@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Terragrunt documentation
+    url: https://docs.terragrunt.com/
+    about: Check upstream CLI behavior and command documentation.
